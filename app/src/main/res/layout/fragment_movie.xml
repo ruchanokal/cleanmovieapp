@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:background="@color/black"
+        tools:context=".fragments.MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/errorTryAgainLayout"
+            android:layout_gravity="center">
+
+
+            <TextView
+                android:id="@+id/errorTryAgainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Error! Try Again!"
+                android:textSize="26sp"
+                android:layout_gravity="center"
+                android:textColor="#CACACA"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/tryAgainImage"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/retry" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittextbg"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp">
+
+                <EditText
+                    android:id="@+id/editTextMovieName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/enter_movie_name"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:textColor="@color/white"
+                    android:textColorHint="#86F3F2F2" />
+
+                <ImageView
+                    android:id="@+id/search_button"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/search" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:orientation="horizontal"
+                android:id="@+id/moviesRecyclerView"/>
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_gravity="center"
+            android:layout_width="75dp"
+            android:visibility="gone"
+            android:layout_height="75dp"
+            android:id="@+id/progressBar"/>
+
+
+    </FrameLayout>
+
+</layout>

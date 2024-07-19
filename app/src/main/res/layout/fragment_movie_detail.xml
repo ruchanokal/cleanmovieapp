@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="moviedetail"
+            type="com.ruchanokal.cleanmovieapp.domain.model.MovieDetail" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/allView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.DetailFragment"
+        android:background="@color/black">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/contentLayout"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_marginTop="15dp"
+                        android:layout_width="250dp"
+                        android:layout_height="350dp"
+                        android:layout_gravity="center"
+                        android:downloadUrl="@{moviedetail.poster}"
+                        android:src="@color/white"
+                        android:id="@+id/filmImagePoster"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="@{moviedetail.title}"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/filmName"
+                        android:fontFamily="@font/montserrat_bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="@{moviedetail.genre}"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:id="@+id/filmType"
+                        android:fontFamily="@font/montserrat_thin"/>
+
+                    <TextView
+                        android:id="@+id/filmImdbRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="@{String.valueOf(moviedetail.imdbRating)}"
+                        android:textAlignment="center"
+                        android:textColor="#FDC61F"
+                        android:layout_marginTop="10dp"
+                        android:textSize="16sp" />
+
+
+                    <View
+                        android:layout_marginVertical="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="#27FFFFFF"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="@string/awards"
+                            android:textColor="@color/white"
+                            android:textSize="14.5sp"
+                            android:fontFamily="@font/montserrat_thin"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="@{moviedetail.awards}"
+                            android:textColor="@color/white"
+                            android:textSize="14.5sp"
+                            android:id="@+id/filmDirector"
+                            android:fontFamily="@font/montserrat_thin"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="@string/language"
+                            android:textColor="@color/white"
+                            android:textSize="14.5sp"
+                            android:fontFamily="@font/montserrat_thin"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="@{moviedetail.language}"
+                            android:textColor="@color/white"
+                            android:textSize="14.5sp"
+                            android:id="@+id/filmLanguage"
+                            android:fontFamily="@font/montserrat_thin"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="@string/release_date"
+                            android:textColor="@color/white"
+                            android:textSize="14.5sp"
+                            android:fontFamily="@font/montserrat_thin"/>
+
+                        <TextView
+                            android:id="@+id/filmCountry"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_thin"
+                            android:text="@{moviedetail.released}"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="14.5sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginVertical="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="#27FFFFFF"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:textSize="15sp"
+                        android:text="@{moviedetail.director}"
+                        android:fontFamily="@font/montserrat_thin"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white"
+                        android:id="@+id/filmDescription" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error"
+            android:textSize="23sp"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:textColor="#CACACA"
+            android:fontFamily="@font/montserrat_thin" />
+
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_centerInParent="true"
+            android:layout_width="45dp"
+            android:visibility="gone"
+            android:layout_height="75dp"
+            android:id="@+id/progressBar"/>
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/share"
+            app:tint="@color/white"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/shareYourMovie"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</layout>
