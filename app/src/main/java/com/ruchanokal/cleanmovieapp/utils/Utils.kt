@@ -21,7 +21,7 @@ fun ImageView.downloadFromUrl(url: String?, progressDrawable: CircularProgressDr
 
     val options = RequestOptions()
         .placeholder(progressDrawable)
-        .error(com.google.android.material.R.drawable.mtrl_ic_error)
+        .error(R.drawable.error)
 
     Glide.with(context)
         .setDefaultRequestOptions(options)
