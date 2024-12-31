@@ -23,7 +23,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -86,4 +87,6 @@ dependencies {
 
     //Glide (İnternetten görsel indirmeye yarayan kütüphane)
     implementation("com.github.bumptech.glide:glide:4.15.0")
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.10")
+
 }

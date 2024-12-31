@@ -49,7 +49,7 @@ class MovieDetailFragment : Fragment() {
 
         binding.apply {
 
-            lifecycleScope.launch {
+            viewLifecycleOwner.lifecycleScope.launch {
 
                 launch {
                     viewModel.movie.collectLatest {
